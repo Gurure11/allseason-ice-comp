@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -279,6 +278,7 @@
         flex-direction: column;
         padding: 10px 0;
         box-shadow: 0 4px 18px rgba(10,30,60,0.15);
+        z-index: 100;
       }
       
       nav.active {
@@ -423,5 +423,210 @@
   </section>
 
   <!-- GALLERY -->
-  <section id
+  <section id="gallery" class="container">
+    <div class="card">
+      <h3>Gallery</h3>
+      
+      <div class="gallery-grid">
+        <a href="images/logo.jpg"><img src="images/logo.jpg" alt="Ice product 1"></a>
+        <a href="images/icef.png"><img src="images/icef.png" alt="Ice product 2"></a>
+        <a href="images/iceg.png"><img src="images/iceg.png" alt="Ice product 3"></a>
+        <a href="images/ice1.jpg"><img src="images/ice1.jpg" alt="Ice product 4"></a>
+        <a href="images/ice11.png"><img src="images/ice11.png" alt="Ice product 5"></a>
+        <a href="images/ice6.jpg"><img src="images/ice6.jpg" alt="Ice product 6"></a>
+      </div>
+    </div>
+  </section>
 
+  <!-- AGENTS -->
+  <section id="agents" class="container">
+    <div class="card">
+      <h3>Agent Program</h3>
+      <p style="line-height:1.6;color:var(--muted)">
+        Our Agent Program is designed for entrepreneurs who want to distribute ice under the All Season brand. Benefits include:
+      </p>
+      <ul>
+        <li>Provision of branded freezer (subject to approval)</li>
+        <li>Preferential wholesale pricing & priority deliveries</li>
+        <li>Marketing material and branded packaging</li>
+        <li>Operational support and training</li>
+      </ul>
+      <p>To apply, click <a href="#contact">Contact Us</a> or call/WhatsApp <strong>072 771 9444</strong>.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <div class="card" style="display:grid;grid-template-columns:1fr 360px;gap:16px;align-items:start">
+      <div>
+        <h3>Contact Us</h3>
+        <p style="color:var(--muted)">Questions, orders, agent enquiries — drop us a message and our team will get back to you promptly.</p>
+
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <input type="text" id="name" name="name" placeholder="Full name" required>
+          <input type="email" id="email" name="email" placeholder="Email address" required>
+          <input type="tel" id="phone" name="phone" placeholder="Phone or WhatsApp number" required>
+          <textarea id="message" name="message" placeholder="Your message / order details" required></textarea>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="primary" type="submit">Send Message</button>
+            <button type="button" onclick="openWhatsApp()" class="btn">WhatsApp Us</button>
+          </div>
+        </form>
+
+        <div style="margin-top:12px" class="socials" aria-hidden="false">
+          <!-- Inline SVG icons to avoid external icon libs -->
+          <a href="https://wa.me/27727719444" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-2.54 5.91L21 21l-3.6-1.1A8.5 8.5 0 1 1 21 11.5z"/>
+              <path d="M17.1 14.9c-.3-.2-1.7-.9-2-.9s-.5 0-.7.2-.8.5-1 .6-.9.1-1.7-.7c-1.6-1.5-2.6-3.2-1.7-4.6.6-1 1.9-1.1 2.4-1.1s1 .2 1.4.5.8.8 1.3 1.3.9.7 1.2 1.2.3.9.1 1.1z"/>
+            </svg>
+            WhatsApp
+          </a>
+
+          <a href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1877F2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3z"/>
+            </svg>
+            Facebook
+          </a>
+
+          <a href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <path d="M16 11.37a4 4 0 1 1-7.9 1.5 4 4 0 0 1 7.9-1.5z"/>
+              <path d="M17.5 6.5h.01"/>
+            </svg>
+            Instagram
+          </a>
+
+          <a href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <path d="M7 16a5 5 0 0 0 10 0V8"></path>
+            </svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+
+      <!-- right column: map & quick details -->
+      <div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(10,30,60,0.04)">
+          <!-- Map embed: address text link if Maps blocked -->
+          <iframe
+            title="All Season Ice Company location"
+            width="100%" height="220" frameborder="0" style="border:0"
+            src="https://www.google.com/maps?q=Calvin+Street,+Namakgale+1391,+Phalaborwa&output=embed" loading="lazy"></iframe>
+        </div>
+
+        <div style="margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f3fbff);">
+          <strong>Address</strong>
+          <div style="color:var(--muted);margin-top:6px">Calvin Street, Namakgale 1391, Phalaborwa</div>
+          <div style="margin-top:8px"><strong> WhatsApp:</strong> 072 771 9444</div>
+          <div style="margin-top:8px"><strong>Operating Hours:</strong> Mon–Sat 06:30 – 17:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> All Season Ice Company (Pvt) Ltd — Calvin Street, Namakgale 1391, Phalaborwa • Built for crisp deliveries & trusted partnerships.
+  </footer>
+
+  <!-- Scripts: carousel, form (local only) -->
+  <script>
+    // YEAR
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Carousel logic
+    (function(){
+      const slidesEl = document.getElementById('slides');
+      const slides = slidesEl.children;
+      const total = slides.length;
+      let index = 0;
+      const dotsWrap = document.getElementById('dots');
+
+      for(let i=0;i<total;i++){
+        const dot = document.createElement('div');
+        dot.className='dot' + (i===0?' active':'');
+        dot.dataset.i = i;
+        dot.addEventListener('click', ()=> goTo(i));
+        dotsWrap.appendChild(dot);
+      }
+
+      function update(){
+        slidesEl.style.transform = 'translateX(' + (-index*100) + '%)';
+        Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i===index));
+      }
+      function next(){ index = (index+1) % total; update(); }
+      function prev(){ index = (index-1 + total) % total; update(); }
+      function goTo(i){ index = i; update(); }
+
+      document.getElementById('next').addEventListener('click', next);
+      document.getElementById('prev').addEventListener('click', prev);
+
+      // autoplay
+      let timer = setInterval(next, 4500);
+      // pause on hover
+      document.querySelector('.carousel').addEventListener('mouseenter', ()=> clearInterval(timer));
+      document.querySelector('.carousel').addEventListener('mouseleave', ()=> timer = setInterval(next, 4500));
+    })();
+
+    // Contact form (demo only — replace with server endpoint when available)
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Here we show a friendly confirmation. In production, post to your server.
+      alert('Thank you, ' + name + '! Your message has been received. We will contact you on ' + (phone || email) + ' shortly.');
+      e.target.reset();
+    }
+
+    function openWhatsApp(){
+      // uses company number from page; uses international code ZAR (+27)
+      const phone = '27727719444';
+      const text = encodeURIComponent('Hello All Season Ice Company — I would like more information about becoming an agent / ordering ice.');
+      window.open('https://wa.me/' + phone + '?text=' + text, '_blank');
+    }
+
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      
+      // Toggle menu visibility
+      menuToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+      });
+      
+      // Close menu when a link is clicked
+      const navLinks = mainNav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mainNav.classList.remove('active');
+        });
+      });
+      
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
